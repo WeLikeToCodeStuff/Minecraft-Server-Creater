@@ -19,38 +19,26 @@ if not os.path.exists('eula.txt'):
     print("Downloading jar...")
     if jartype == "spigot":
         os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
     elif jartype == "paper":
         os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
     elif jartype == "craftbukkit":
         os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
     elif jartype == "vanilla":
         os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
     elif jartype == "bungeecord":
         os.system("wget https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar bungeecord-latest.jar")
     elif jartype == "flamecord":
         os.system("wget https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar")
-        print("Starting server...")
-        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar flamecord-latest.jar")
     else:
         print("Jar not found.")
         exit()
-    #print("Accepting eula...")
-    #os.system("wget https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creater/main/configs/eula.txt")
+    print("Accepting eula...")
+    os.system("wget https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creater/main/configs/eula.txt")
     #os.mknod('eula.txt')
     #f= open("eula.txt","a")
     #f.write("eula=true")
-    #print("Starting server...")
-    #os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
+    print("Starting server...")
+    os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
     os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
