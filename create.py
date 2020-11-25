@@ -6,7 +6,7 @@ print("Vanilla, Spigot, CraftBukkit, Paper")
 typerandom = input("Please enter a server type: ")
 print("Example for server version: 1.16.4")
 version = input("Please enter a server version: ")
-serverram = input("Please enter an amount of ram for the server in MEGABYTES: ")
+serverram = input("Please enter an amount of ram for the server in GIGABYTES: ")
 jartype = typerandom.lower()
 
 # Code to wget the url and download the jar
@@ -34,7 +34,7 @@ if not os.path.exists('eula.txt'):
     #f= open("eula.txt","a")
     #f.write("eula=true")
     print("Starting server...")
-    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "M" + "-jar " + jartype + "-" + version + ".jar")
+    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "G" + "-jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
-    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "M" + "-jar " + jartype + "-" + version + ".jar")
+    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "G" + "-jar " + jartype + "-" + version + ".jar")
