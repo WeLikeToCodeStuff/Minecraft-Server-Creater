@@ -1,5 +1,5 @@
 import os
-os.system("clear")
+os.system("cls")
 print("Hello! Welcome to NeonDevelopment's Server creation script!")
 print("Please enter one of the following server types to continue: ")
 print("Vanilla, Spigot, CraftBukkit, Paper, BungeeCord, or FlameCord")
