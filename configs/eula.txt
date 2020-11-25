@@ -1,0 +1,2 @@
+# Created by NeonDevelopment server creation script
+eula=true
