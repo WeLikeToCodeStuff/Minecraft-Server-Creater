@@ -18,17 +18,17 @@ os.system("cls")
 if not os.path.exists('eula.txt'):
     print("Downloading jar...")
     if jartype == "spigot":
-        os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar" + "--output " + jartype + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar")
     elif jartype == "paper":
-        os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar" + "--output " + jartype + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
     elif jartype == "craftbukkit":
-        os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar" + "--output " + jartype + version + ".jar") 
+        os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar") 
     elif jartype == "vanilla":
-        os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar" + "--output " + jartype + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar")
     elif jartype == "bungeecord":
-        os.system("wget https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord.jar")
+        os.system("wget https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar")
     elif jartype == "flamecord":
-        os.system("wget https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord.jar")
+        os.system("wget https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar")
     else:
         print("Jar not found.")
         exit()
