@@ -6,3 +6,12 @@ A simple python script to create a minecraft server
 wget https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creater/main/create.py
 python3 create.py
 ```
+### Jars this supports
+This tool supports the following server jar files:
+```
+Spigot
+Paper
+Vanilla
+Bungeecord
+Flamecord
+```
