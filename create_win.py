@@ -26,9 +26,9 @@ if not os.path.exists('eula.txt'):
     elif jartype == "vanilla":
         os.system("curl https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar" + "--output " + jartype + version + ".jar")
     elif jartype == "bungeecord":
-        os.system("curl https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord-.jar")
+        os.system("curl https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord.jar")
     elif jartype == "flamecord":
-        os.system("curl https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord-.jar")
+        os.system("curl https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord.jar")
     else:
         print("Jar not found.")
         exit()
@@ -37,11 +37,24 @@ if not os.path.exists('eula.txt'):
     #os.mknod('eula.txt')
     #f= open("eula.txt","a")
     #f.write("eula=true")
-    print("Saving start.cmd")
-    f= open("start.cmd","a")
-    f.write("@echo off\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
-    print("Starting server...")
-    os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
+    if jartype == "bungeecord":
+        print("Saving start.cmd")
+        f= open("start.cmd","a")
+        f.write("@echo off\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar bungeecord.jar")
+        print("Starting Server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar bungeecord.jar")
+    elif jartype == "flamecord":
+        print("Saving start.cmd")
+        f= open("start.cmd","a")
+        f.write("@echo off\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar flamecord.jar")
+        print("Starting Server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar flamecord.jar")
+    else:
+        print("Saving start.cmd")
+        f= open("start.cmd","a")
+        f.write("@echo off\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
+        print("Starting server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
     os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
