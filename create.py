@@ -34,7 +34,7 @@ if not os.path.exists('eula.txt'):
     #f= open("eula.txt","a")
     #f.write("eula=true")
     print("Starting server...")
-    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "G" + "-jar " + jartype + "-" + version + ".jar")
+    os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
-    os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "G" + "-jar " + jartype + "-" + version + ".jar")
+    os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
