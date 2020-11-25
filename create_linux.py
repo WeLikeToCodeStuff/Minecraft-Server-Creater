@@ -20,7 +20,7 @@ if not os.path.exists('eula.txt'):
     if jartype == "spigot":
         os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar")
     elif jartype == "paper":
-        os.system("wget -O paper-" + version + ".jar" + "https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
+        os.system("wget -O paper-" + version + ".jar " + "https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
     elif jartype == "craftbukkit":
         os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar") 
     elif jartype == "vanilla":
