@@ -1,5 +1,5 @@
 import os
-os.system("clear")
+os.system("cls")
 print("Hello! Welcome to NeonDevelopment's Server creation script!")
 print("Please enter one of the following server types to continue: ")
 print("Vanilla, Spigot, CraftBukkit, Paper, BungeeCord, or FlameCord")
@@ -14,21 +14,21 @@ jartype = typerandom.lower()
 #os.system("wget https://hostingfiles.gq/jars/" + jartype + "/release/" + jartype + "-" + version + ".jar")
 
 
-os.system("clear")
+os.system("cls")
 if not os.path.exists('eula.txt'):
     print("Downloading jar...")
     if jartype == "spigot":
-        os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar" + "--output " + jartype + version + ".jar")
     elif jartype == "paper":
-        os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar" + "--output " + jartype + version + ".jar")
     elif jartype == "craftbukkit":
-        os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar" + "--output " + jartype + version + ".jar") 
     elif jartype == "vanilla":
-        os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar")
+        os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar" + "--output " + jartype + version + ".jar")
     elif jartype == "bungeecord":
-        os.system("wget https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar")
+        os.system("wget https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord.jar")
     elif jartype == "flamecord":
-        os.system("wget https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar")
+        os.system("wget https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord.jar")
     else:
         print("Jar not found.")
         exit()
@@ -37,10 +37,24 @@ if not os.path.exists('eula.txt'):
     #os.mknod('eula.txt')
     #f= open("eula.txt","a")
     #f.write("eula=true")
-    f= open("start.sh","a")
-    f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
-    print("Starting server...")
-    os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
+    if jartype == "bungeecord":
+        print("Saving start.sh")
+        f= open("start.sh","a")
+        f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar bungeecord.jar")
+        print("Starting Server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar bungeecord.jar")
+    elif jartype == "flamecord":
+        print("Saving start.sh")
+        f= open("start.sh","a")
+        f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar flamecord.jar")
+        print("Starting Server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar flamecord.jar")
+    else:
+        print("Saving start.sh")
+        f= open("start.sh","a")
+        f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
+        print("Starting server...")
+        os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
     os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
