@@ -14,7 +14,7 @@ jartype = typerandom.lower()
 #os.system("curl https://hostingfiles.gq/jars/" + jartype + "/release/" + jartype + "-" + version + ".jar")
 
 
-os.system("clear")
+os.system("cls")
 if not os.path.exists('eula.txt'):
     print("Downloading jar...")
     if jartype == "spigot":
@@ -26,9 +26,9 @@ if not os.path.exists('eula.txt'):
     elif jartype == "vanilla":
         os.system("curl https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar" + "--output " + jartype + version + ".jar")
     elif jartype == "bungeecord":
-        os.system("curl https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord.jar")
+        os.system("curl https://hostingfiles.gq/jars/bungeecord/bungeecord-latest.jar --output bungeecord-.jar")
     elif jartype == "flamecord":
-        os.system("curl https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord.jar")
+        os.system("curl https://hostingfiles.gq/jars/flamecord/flamecord-latest.jar --output flamecord-.jar")
     else:
         print("Jar not found.")
         exit()
