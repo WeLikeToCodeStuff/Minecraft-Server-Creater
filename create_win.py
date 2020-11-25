@@ -37,6 +37,9 @@ if not os.path.exists('eula.txt'):
     #os.mknod('eula.txt')
     #f= open("eula.txt","a")
     #f.write("eula=true")
+    print("Saving start.cmd")
+    f= open("start.cmd","a")
+    f.write('@echo off\n"java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar"')
     print("Starting server...")
     os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
 else:
