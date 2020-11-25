@@ -11,16 +11,29 @@ jartype = typerandom.lower()
 
 # Code to wget the url and download the jar
 
-os.system("wget https://hostingfiles.gq/jars/" + jartype + "/release/" + jartype + "-" + version + ".jar")
+#os.system("wget https://hostingfiles.gq/jars/" + jartype + "/release/" + jartype + "-" + version + ".jar")
 
 
 os.system("clear")
 if not os.path.exists('eula.txt'):
+    print("Downloading jar...")
+    if jartype == "spigot":
+        os.system("wget https://hostingfiles.gq/jars/spigot/spigot-" + version + ".jar")
+    elif jartype == "paper":
+        os.system("wget https://hostingfiles.gq/jars/papermc/papermc-" + version + ".jar")
+    elif jartype == "craftbukkit":
+        os.system("wget https://hostingfiles.gq/jars/craftbukkit/craftbukkit-" + version + ".jar")
+    elif jartype == "vanilla":
+        os.system("wget https://hostingfiles.gq/jars/vanilla/release/vanilla-" + version + ".jar")
+    else:
+        print("Jar not found.")
+        exit()
     print("Accepting eula...")
     os.system("wget https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creater/main/configs/eula.txt")
     #os.mknod('eula.txt')
     #f= open("eula.txt","a")
     #f.write("eula=true")
+    print("Starting server...")
     os.system("java -Xmx" + serverram + "M" + "-Xms" + serverram + "M" + "-jar " + jartype + "-" + version + ".jar")
 else:
     print("Server Starting...")
