@@ -7,6 +7,11 @@ For Linux:
 wget https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creater/main/create_linux.py
 python3 create_linux.py
 ```
+For Windows:
+```sh
+curl https://raw.githubusercontent.com/WeLikeToCodeStuff/Minecraft-Server-Creator/main/create_win.py
+python3 create_win.py
+```
 ### Jars this supports
 This tool supports the following server jar files:
 ```
