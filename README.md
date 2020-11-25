@@ -12,6 +12,7 @@ This tool supports the following server jar files:
 Spigot
 Paper
 Vanilla
+Craftbukkit
 Bungeecord
 Flamecord
 ```
