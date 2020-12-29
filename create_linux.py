@@ -52,7 +52,7 @@ if not os.path.exists('eula.txt'):
     else:
         print("Saving start.sh")
         f= open("start.sh","a")
-        f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")\
+        f.write("#!/bin/bash\n" + "java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
         os.system("chmod +x start.sh")
         print("Starting server...")
         os.system("java -Xmx" + serverram + "G" + " -Xms" + serverram + "G" + " -jar " + jartype + "-" + version + ".jar")
